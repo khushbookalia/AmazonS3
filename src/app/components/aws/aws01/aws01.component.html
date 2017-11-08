@@ -1,0 +1,44 @@
+<div class="card">
+  <img src="./../../../assets/image1.jpg" alt="Avatar" style="width:100%">
+  <div class="container">
+    <h2><b>UPLOAD YOUR DATA HERE..</b></h2>
+    <div class="listData">
+      <table>
+        <tr>
+          <th>Select</th>
+          <th>Name</th>
+          <th>Last Modified</th>
+          <th>Owner ID</th>
+          <th>Size</th>
+          <th>Storage Class</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let file of allFiles">
+          <td class="checkFile">
+            <input type="checkbox" name=""/>
+            <!--<input type="checkbox" id="checkboxFile" name=""/>
+            <label for="checkboxFile" class="checkLabel"></label>-->
+          <td>{{file.Key}}</td>
+          <td>{{file.LastModified}}</td>
+          <td>{{file.Owner.ID}}</td>
+          <td>{{file.Size}}</td>
+          <td>{{file.StorageClass}}</td>
+          <td><button class="bun">Download</button></td>
+        </tr>
+      </table>
+    </div>
+    <div class="blocks">
+      <div class="upload">
+        <h3>Upload Your File here !!</h3>
+        <input type="file" name="file" (change)="logoFileEvent($event)">
+        <button class="bun" (click)="upload()">Upload File</button>
+      </div>
+      <div class="download">
+        <h3>Select Files you want to download by clicking checkbox !!</h3>
+        <button class="bun">Download One/Multiple</button>
+        <button class="bun">Download All</button>
+      </div>
+      <!--<button type="submit" (click)="getSingleData()">get most recent data</button>-->
+    </div>
+  </div>
+</div>
