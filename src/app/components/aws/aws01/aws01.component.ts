@@ -31,8 +31,9 @@ export class Aws01Component implements OnInit {
   getData(){
     this.Aws01Service.getAllData();
   }
-  getSingleData(){
-    this.Aws01Service.getSingleData();
+  getSingleData(value){
+    console.log(">>>",value)
+    this.Aws01Service.getSingleData(value);
   }
 
 }

@@ -92,11 +92,14 @@ export class Aws01Service {
     
   }
 
-  getSingleData() {
-    var params = { Bucket: bucketName, ETag: ETag, Key: '' }
+  getSingleData(value) {
+    var params = { Bucket: bucketName, Key: value }
     s3.getObject(params, function (err, data) {
       if (err) console.log(err, err.stack); // an error occurred
-      else console.log("got single detail-->>", data);           // successful response
+      else {
+        console.log("got single detail-->>", data);   
+        // this.downloadFile(data)
+      }
     });
   }
 

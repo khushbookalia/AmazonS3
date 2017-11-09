@@ -23,7 +23,7 @@
           <td>{{file.Owner.ID}}</td>
           <td>{{file.Size}}</td>
           <td>{{file.StorageClass}}</td>
-          <td><button class="bun">Download</button></td>
+          <td><button class="bun" (click)="getSingleData(file.Key)">Download</button></td>
         </tr>
       </table>
     </div>
